@@ -24,3 +24,5 @@ protobuf==3.20
 hf_transfer
 huggingface_hub[hf_transfer]
 sentencepiece
+tensorboard
+pydantic==1.10.14

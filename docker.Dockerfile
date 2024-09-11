@@ -1,9 +1,9 @@
-from nvidia/cuda:11.8.0-cudnn8-devel-ubuntu20.04 as base:
+FROM nvidia/cuda:11.8.0-cudnn8-devel-ubuntu20.04 AS base
 #from nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu22.04 as base:
 ADD . /llmseg
 WORKDIR /llmseg
-RUN chmod +x install_deps.h & install_deps.sh
-RUN HF_HUB_ENABLE_HF_TRANSFER=1 huggingface-cli download
+RUN chmod +x install_deps.sh & install_deps.sh
+RUN HF_HUB_ENABLE_HF_TRANSFER=1 huggingface-cli download JCdesu/LLM-Seg-deepspeed
 
 WORKDIR models
 #llama weights downloader
