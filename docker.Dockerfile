@@ -10,7 +10,7 @@ WORKDIR models
 RUN git clone https://github.com/shawwn/llama-dl.git
 WORKDIR llama-dl
 # select the 7B model for download
-RUN git apply ../weights_select.patch
+RUN git apply ../llama_dl_patch.patch
 RUN ./llama.sh
 RUN mv 7B ..
 RUN wget https://huggingface.co/liuhaotian/LLaVA-Lightning-7B-delta-v1-1
